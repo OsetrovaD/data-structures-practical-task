@@ -37,7 +37,7 @@ public class DominatingElementServiceTest {
     public void checkFindDominatingElementByComparator() {
         List<Integer> integers = Arrays.asList(2, 2, 1, 1, 1, 2, 2);
 
-        Integer dominatingElement = service.findDominatingElement(integers);
+        Integer dominatingElement = service.findDominatingElementByComparator(integers);
 
         Assert.assertEquals(Integer.valueOf(2), dominatingElement);
     }
