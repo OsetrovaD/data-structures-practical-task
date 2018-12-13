@@ -1,7 +1,6 @@
 package com.osetrova.anagram;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,7 @@ public class AnagramService {
                     continue;
                 }
             }
-            anagrams.put(string, new TreeSet<String>(Comparator.naturalOrder()) {
+            anagrams.put(string, new TreeSet<String>() {
                 {
                     this.add(string);
                 }

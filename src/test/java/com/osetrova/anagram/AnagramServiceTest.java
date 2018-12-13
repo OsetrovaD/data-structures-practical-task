@@ -1,12 +1,12 @@
 package com.osetrova.anagram;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
+
+import static org.junit.Assert.assertEquals;
 
 public class AnagramServiceTest {
 
@@ -19,23 +19,27 @@ public class AnagramServiceTest {
         List<TreeSet<String>> anagrams = service.findAnagrams(strings);
 
         List<TreeSet<String>> expectedAnagrams = new ArrayList<>();
-        expectedAnagrams.add(new TreeSet<String>(Comparator.naturalOrder()) {
+        expectedAnagrams.add(new TreeSet<String>() {
             {
                 this.add("eat");
                 this.add("tea");
                 this.add("ate");
             }
-        });expectedAnagrams.add(new TreeSet<String>(Comparator.naturalOrder()) {
+        });
+
+        expectedAnagrams.add(new TreeSet<String>() {
             {
                 this.add("tan");
                 this.add("nat");
             }
-        });expectedAnagrams.add(new TreeSet<String>(Comparator.naturalOrder()) {
+        });
+
+        expectedAnagrams.add(new TreeSet<String>() {
             {
                 this.add("bat");
             }
         });
 
-        Assert.assertEquals(expectedAnagrams, anagrams);
+        assertEquals(expectedAnagrams, anagrams);
     }
 }
